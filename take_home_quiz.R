@@ -60,9 +60,14 @@ question_2.matrix
 # --
 
 # loading the data
-install.packages("readxl")
+if (!require(readxl)) {
+  install.packages("readxl")
+}
 library(readxl)
-install.packages("tidyverse")
+
+if (!require(ggplot2)) {
+  install.packages("tidyverse")
+}
 library(ggplot2)
 
 question_3.df = readxl::read_excel("ngara_district_dataset.xlsx")
